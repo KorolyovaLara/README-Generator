@@ -73,6 +73,15 @@ const questions = [
     },
     {
         type: 'input',
+        name: 'author',
+        message: 'What is your name and surname?',
+        validate: (value) => {
+            if (value) { return true } 
+            else { return 'Please enter your name and surname.' }
+        },
+    },
+    {
+        type: 'input',
         name: 'github',
         message: 'What is your GitHub username?',
         validate: (value) => {
