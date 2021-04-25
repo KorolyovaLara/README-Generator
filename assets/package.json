@@ -1,0 +1,20 @@
+{
+  "name": "package-for-generator",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/KorolyovaLara/README-Generator.git"
+  },
+  "keywords": [],
+  "author": "Larysa Korolyova <larakorolyova@gmail.com> (https://github.com/KorolyovaLara)",
+  "license": "MIT",
+  "dependencies": {
+    "email-validator": "^2.0.4",
+    "inquirer": "^8.0.0"
+  }
+}
