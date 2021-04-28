@@ -3,26 +3,45 @@ function renderLicenseBadge(license) {
   return `![Github license](https://img.shields.io/badge/license-${license}-blue.svg)`
 }
 
-// TODO: Create a function that returns the license link
-function renderLicenseLink(license) {}
+// Function that returns the license link
+function renderLicenseLink(license) {
+  if (license === "MIT") {
+    return `https://opensource.org/licenses/MIT`
+  } else 
+  if (license === "ISC") {
+    return `https://opensource.org/licenses/ISC`
+  } else 
+  if (license === "BSD3") {
+    return `https://opensource.org/licenses/BSD-3-Clause`
+  } else 
+  if (license === "Mozilla") {
+    return `https://opensource.org/licenses/MPL-2.0`
+  } else 
+  if (license === "Apache") {
+    return `https://opensource.org/licenses/Apache-2.0`
+  } else {
+    return `https://opensource.org/licenses/lgpl-3.0.html`
+  }
+}
 
-// TODO: Create a function that returns the license section of README
-function renderLicenseSection(license) {}
+// Function that returns the license section of README
+function renderLicenseSection(license) {
+  return `[${renderLicenseBadge(license)}](${renderLicenseLink(license)})`
+}
 
 // Function to generate markdown for README
 function generateMarkdown(data) {
   return `
-  ${data.title}
-
-  ${renderLicenseBadge(data.license)}
+# ${data.title}
+  ${renderLicenseSection(data.license)}
 
 ## Description
  ${data.description}
 
-## Table of Contents
+## *Table of Contents*
 
 * [Installation](#installation)
-* [Usage](#installation)
+* [Usage](#usage)
 * [Contributing](#contributing)
 * [Tests](#tests)
 * [Credits](#credits)
@@ -50,11 +69,12 @@ function generateMarkdown(data) {
 
 ## Questions
   * Checkout my [GitHub profile](https://github.com/${data.github})
-  * Any additional questions or feed back, feel free to [send an email](mailto:${data.email}). 
+  * Any additional questions or feedback, feel free to [send an email](mailto:${data.email}). 
 
 ## License
   Copyright (c) [${data.author}](https://github.com/${data.github}). All rights reserved.
-  Licensed under the ${data.license} license.
+
+  Licensed under the [${data.license}](${renderLicenseLink(data.license)}) license.
 
 `;
 }
