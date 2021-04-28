@@ -121,7 +121,7 @@ function init() {
     .prompt (questions)
     .then (data => {
         console.log(data);
-        return writeToFile ('README.md', generateMarkdown(data)) 
+        return writeToFile ('./demo/README.md', generateMarkdown(data)) 
     })
 }
 
